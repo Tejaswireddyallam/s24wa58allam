@@ -3,7 +3,7 @@ var router = express.Router();
 
 var random;
 router.get('/', function(req, res, next) {
-  random = Math.random() * 200;
+  random = Math.floor(Math.random() * 50) + 1;//takes random values between 1 and 50
   var x;
   if (req.query.x) {
     x = parseFloat(req.query.x);
@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
   var ansstr2 = `Math.exp applied to ${x} is ${ans2}`;
   var ansstr3 = `Math.expm1 applied to ${x} is ${ans3}`;
 
-  res.send(`${ansstr1}\n${ansstr2}\n${ansstr3}`);
+  res.send(`${ansstr1}<br>${ansstr2}<br>${ansstr3}`);
 });
 
 module.exports = router;
