@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
   if (req.query.x) {
     x = parseFloat(req.query.x);
   } else {
-    x = randomValue;
+    x = random;
   }
   var ans1 = Math.atan(x); 
   var ans2 = Math.exp(x); 
